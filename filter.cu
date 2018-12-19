@@ -90,8 +90,8 @@ __global__ void filter(unsigned char *image, unsigned char *out, const unsigned 
 
  	int divby = (2*kernelsizex+1)*(2*kernelsizey+1); // Works for box filters only!
 	
-	if ((threadIdx.x < kernelsizex) && (threadIdx.x >= (blockDim.x - kernelsizex))
-		(threadIdx.y < kernelsizey) && (threadIdx.y >= (blockDim.y - kernelsizey))) // If inside image
+	if ((threadIdx.x < kernelsizex) && (threadIdx.x >= (blockDim.x - kernelsizex)) &&
+		(threadIdx.y < kernelsizey) && (threadIdx.y >= (blockDim.y - kernelsizey)))
 	{
 // Filter kernel (simple box filter)
 		sumx=0;sumy=0;sumz=0;
