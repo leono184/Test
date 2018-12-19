@@ -84,7 +84,9 @@ __global__ void filter(unsigned char *image, unsigned char *out, const unsigned 
 
 	__syncthreads();
 
-  	unsigned int sumx, sumy, sumz;
+	unsigned int sumx, sumy, sumz;
+	  
+	int dx,dy; 
 
  	int divby = (2*kernelsizex+1)*(2*kernelsizey+1); // Works for box filters only!
 	
